@@ -20,14 +20,14 @@ function getTextFromZippedXML($archiveFile, $contentFile) {
  
             $string = $xml->saveXML();
  
-            $perenos_xml = array("</w:p>", "<w:br/>", "<w:i/>");
-            $perenos_norm = "<br />";
+            $tag_xml = array("</w:p>", "<w:br/>", "<w:i/>");
+            $tag = "<br />";
  
             
-            $new_perenos = str_replace($perenos_xml, $perenos_norm, $string);
+            $textForPront = str_replace($tag_xml, $tag, $string);
  
          
-            return $new_perenos;
+            return $textForPront;
         }
         $zip->close();
     }
